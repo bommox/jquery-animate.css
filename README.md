@@ -12,7 +12,7 @@ Import JS and the CSS files in your page:
 ```
 
 ```html
-<script src="libs/jquery-animate.css/jquery.animate.css.js"></script>
+<script src="libs/jquery-animate.css/jquery-animate.css.js"></script>
 ```
 
 Then simply perform an animation:
