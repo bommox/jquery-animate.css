@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Animate.css jQuery plugin</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="dist/libs/animate.css" />
+    <style>
+        .target {
+            width : 60px;
+            height: 60px;
+            background-color: red;
+            margin: 5px;
+            display: inline-block;
+        }
+        .green {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">           
+            <div class="col-xs-12">                
+                <h1>Animate.css jQuery</h1>
+            </div>
+        </div>
+
+        <div class="row s-case-1">
+            <div class="col-xs-12 col-sm-6">
+                <div class="target s-target"></div>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                <pre>$(".target").animateCss('bounce');</pre>                
+                <button class="btn btn-default s-btn">Animate!</button>
+            </div>
+        </div>
+
+        <div class="row s-case-11">
+            <div class="col-xs-12 col-sm-6">
+                <div class="target s-target"></div>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                <pre>$(".s-target").animateCss('bounce', { duration : 2000});</pre>                
+                <button class="btn btn-default s-btn">Animate!</button>
+            </div>
+        </div>
+        
+        <div class="row s-case-2">
+            <div class="col-xs-12 col-sm-6">
+                <div class="target s-target"></div>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                <pre>$(".s-target").animateCss('bounce', function() {
+	$(this).toggleClass("green");   
+});</pre>                
+                <button class="btn btn-default s-btn">Animate!</button>
+            </div>
+        </div>
+
+        
+        
+        <div class="row s-case-3">
+            <div class="col-xs-12 col-sm-6">
+                <div class="target s-target"></div>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                <pre>$(".s-target").html("").animateCss('effect-no-exists', function() {
+	$(this).html("callback safe!");   
+});</pre>                
+                <button class="btn btn-default s-btn">Animate!</button>
+            </div>
+        </div>
+
+        <div class="row s-case-4">
+            <div class="col-xs-12 col-sm-6">
+                <div class="target s-target"></div>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                <pre>$(".s-target").animateCss('pulse').promise()
+	.then(function() {
+	    $(this).html("Promise resolved!");
+	});</pre>                
+                <button class="btn btn-default s-btn">Animate!</button>
+            </div>
+        </div>
+
+        <div class="row s-case-5">
+            <div class="col-xs-12 col-sm-6">
+                <div class="target s-target"></div>
+                <div class="target s-target"></div>
+                <div class="target s-target"></div>
+                <div class="target s-target"></div>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                <pre>$(".s-case-5 .s-target").each(function(idx, el) {
+    $(el).animateCss('pulse', 
+        {
+            delay: 100 * idx
+        }
+    ).promise().then(function() {
+        $(this).toggleClass("green");;
+    });
+});</pre>
+                <button class="btn btn-default s-btn">Animate!</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="src/jquery.animate.css.js"></script>
+    <script>
+        $(function() {
+            $(".s-case-1 .s-btn").click(function() {
+                $(".s-case-1 .s-target").animateCss('bounce');
+            });
+
+            $(".s-case-11 .s-btn").click(function() {
+                $(".s-case-11 .s-target").animateCss('bounce', { duration : 2000});
+            });
+            
+            $(".s-case-2 .s-btn").click(function() {                
+                $(".s-case-2 .s-target").animateCss('bounce', function() {
+                    $(this).toggleClass("green");   
+                });
+            });            
+            
+            $(".s-case-3 .s-btn").click(function() {                
+                $(".s-case-3 .s-target").html("").animateCss('effect-no-exists', function() {
+                    $(this).html("callback safe!");   
+                });
+            });
+
+            
+            $(".s-case-4 .s-btn").click(function() {
+                $(".s-case-4 .s-target").html("")           
+                $(".s-case-4 .s-target").animateCss('pulse').promise().then(function() {
+                    $(this).html("Promise resolved!");
+                });
+            });
+            
+            $(".s-case-5 .s-btn").click(function() {
+                $(".s-case-5 .s-target").each(function(idx, el) {
+                    $(el).animateCss('pulse', 
+                        {
+                            delay: 100 * idx
+                        }
+                    ).promise().then(function() {
+                        $(this).toggleClass("green");;
+                    });
+                });
+            });
+            
+            $(".s-case-6 .s-btn").click(function() {        
+                $(".s-case-5 .s-target").animateCss('pulse', {delay: 1000}).promise().then(function() {
+                    $(this).html("Promise resolved!");
+                });
+            });
+        });
+    </script>
+</body>
+</html>

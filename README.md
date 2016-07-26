@@ -1,5 +1,5 @@
 # jquery-animate.css
-Daeden jQuery plugin implementation
+Daeden Animate.css jQuery plugin implementation
 
 ## Safe callback
 
