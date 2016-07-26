@@ -2,14 +2,14 @@
   "name": "jquery-animate.css",
   "homepage": "https://github.com/bommox/jquery-animate.css",
   "description": "Animate.css jQuery plugin implementation",
-  "main": "dist/jquery.animate.css.js",
+  "main": "dist/jquery-animate.css.js",
   "keywords": [
     "animate.css",
     "jquery",
     "animate"
   ],
   "authors": [
-    "jorge-blom bommox@gmail.com"
+    "jorge-blom <bommox@gmail.com>"
   ],
   "license": "MIT",
   "ignore": [

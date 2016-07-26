@@ -2,7 +2,7 @@
   "name": "jquery-animate.css",
   "version": "1.0.0",
   "description": " Animate.css jQuery plugin implementation",
-  "main": "dist/jquery.animate.css.js",
+  "main": "dist/jquery-animate.css.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
