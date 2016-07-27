@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Jquery-animate.css by bommox</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Jquery-animate.css</h1>
+      <h2 class="project-tagline">AnimateCSS jQuery plugin implementation</h2>
+      <a href="https://github.com/bommox/jquery-animate.css" class="btn">View on GitHub</a>
+      <a href="https://github.com/bommox/jquery-animate.css/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/bommox/jquery-animate.css/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="jquery-animatecss" class="anchor" href="#jquery-animatecss" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>jquery-animate.css</h1>
+
+<p>This plugin allows you to control css animations from jQuery taking advantage of callbacks and promises.</p>
+
+<p>The css part is cloned from daneden/animate.css</p>
+
+<h2>
+<a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Getting started</h2>
+
+<p>Import JS and the CSS files in your page:</p>
+
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">link</span> <span class="pl-e">rel</span>=<span class="pl-s"><span class="pl-pds">"</span>stylesheet<span class="pl-pds">"</span></span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>libs/jquery-animate.css/libs/animate.css<span class="pl-pds">"</span></span> /&gt;</pre></div>
+
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>libs/jquery-animate.css/jquery-animate.css.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</pre></div>
+
+<p>Then simply perform an animation:</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">"</span>.target<span class="pl-pds">"</span></span>).<span class="pl-en">animateCss</span>(<span class="pl-s"><span class="pl-pds">'</span>bounce<span class="pl-pds">'</span></span>);</pre></div>
+
+<h2>
+<a id="usage-and-features" class="anchor" href="#usage-and-features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage and features</h2>
+
+<p>This plugin has the following features:</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">$</span>.<span class="pl-smi">fn</span>.<span class="pl-en">animateCss</span>(effect <span class="pl-c">/*string*/</span>);
+<span class="pl-c">//or</span>
+<span class="pl-smi">$</span>.<span class="pl-smi">fn</span>.<span class="pl-en">animateCss</span>(effect <span class="pl-c">/*string*/</span>, options <span class="pl-c">/*plainObject*/</span>);
+<span class="pl-c">//or</span>
+<span class="pl-smi">$</span>.<span class="pl-smi">fn</span>.<span class="pl-en">animateCss</span>(effect <span class="pl-c">/*string*/</span>, callback <span class="pl-c">/*function*/</span>);</pre></div>
+
+<p>Options is a plain object:</p>
+
+<div class="highlight highlight-source-js"><pre>{
+  delay <span class="pl-k">:</span> <span class="pl-c1">0</span>,                <span class="pl-c">// in milliseconds</span>
+  duration <span class="pl-k">:</span> <span class="pl-c1">800</span>,           <span class="pl-c">// in milliseconds</span>
+  <span class="pl-en">callback</span> <span class="pl-k">:</span> <span class="pl-k">function</span>() {}, <span class="pl-c">// function with element scope</span>
+  queue <span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>fx<span class="pl-pds">'</span></span>              <span class="pl-c">// the queueName to be used</span>
+}</pre></div>
+
+<h3>
+<a id="option-duration" class="anchor" href="#option-duration" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Option <code>duration</code>
+</h3>
+
+<p>The duration of the CSS animation applied. Default value defined in CSS with <code>animation-duration</code> property. If no defined, 1000ms is applied.</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">"</span>.target<span class="pl-pds">"</span></span>).<span class="pl-en">animateCss</span>(<span class="pl-s"><span class="pl-pds">'</span>bounce<span class="pl-pds">'</span></span>, {duration<span class="pl-k">:</span> <span class="pl-c1">500</span>});</pre></div>
+
+<h3>
+<a id="option-delay" class="anchor" href="#option-delay" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Option <code>delay</code>
+</h3>
+
+<p>The offset until animation begins.</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">"</span>.target<span class="pl-pds">"</span></span>).<span class="pl-en">animateCss</span>(<span class="pl-s"><span class="pl-pds">'</span>bounce<span class="pl-pds">'</span></span>, {delay<span class="pl-k">:</span> <span class="pl-c1">500</span>});</pre></div>
+
+<h3>
+<a id="option-callback" class="anchor" href="#option-callback" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Option <code>callback</code>
+</h3>
+
+<p>The callback which will be executed after animation ends. The plugin has an internal control to ensure callback is called even if animation does not exists.</p>
+
+<p>It is also possible to use <code>promise</code> to manage the callback or actions after animation.</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">"</span>.target<span class="pl-pds">"</span></span>).<span class="pl-en">animateCss</span>(<span class="pl-s"><span class="pl-pds">'</span>bounce<span class="pl-pds">'</span></span>, {
+    <span class="pl-en">callback</span><span class="pl-k">:</span> <span class="pl-k">function</span>() {
+        <span class="pl-en">$</span>(<span class="pl-v">this</span>).<span class="pl-en">html</span>(<span class="pl-s"><span class="pl-pds">"</span>Callback!<span class="pl-pds">"</span></span>);
+    }    
+});</pre></div>
+
+<p>Remember it is possible to pass callback directly as second argument:</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">"</span>.target<span class="pl-pds">"</span></span>).<span class="pl-en">animateCss</span>(<span class="pl-s"><span class="pl-pds">'</span>bounce<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>() {
+        <span class="pl-en">$</span>(<span class="pl-v">this</span>).<span class="pl-en">html</span>(<span class="pl-s"><span class="pl-pds">"</span>Callback!<span class="pl-pds">"</span></span>);
+    });</pre></div>
+
+<h2>
+<a id="promises-and-deferreds" class="anchor" href="#promises-and-deferreds" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Promises and deferreds</h2>
+
+<p>This plugins uses the <code>fx</code> queue so it is possible to use the promise to manage when the queue has ended.</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">"</span>.target<span class="pl-pds">"</span></span>).<span class="pl-en">animateCss</span>(<span class="pl-s"><span class="pl-pds">'</span>bounce<span class="pl-pds">'</span></span>).<span class="pl-en">promise</span>()
+    .<span class="pl-en">then</span>(
+        <span class="pl-k">function</span>() {
+            <span class="pl-en">$</span>(<span class="pl-v">this</span>).<span class="pl-en">html</span>(<span class="pl-s"><span class="pl-pds">"</span>Promise resolved!<span class="pl-pds">"</span></span>);
+        }
+    );</pre></div>
+
+<p>Remember you can modify the <code>queueName</code> with the <code>queue</code> option:</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">"</span>.target<span class="pl-pds">"</span></span>).<span class="pl-en">animateCss</span>(<span class="pl-s"><span class="pl-pds">'</span>bounce<span class="pl-pds">'</span></span>, {queue <span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>anim<span class="pl-pds">'</span></span>}).<span class="pl-en">promise</span>(<span class="pl-s"><span class="pl-pds">'</span>anim<span class="pl-pds">'</span></span>)
+    .<span class="pl-en">then</span>(
+        <span class="pl-k">function</span>() {
+            <span class="pl-en">$</span>(<span class="pl-v">this</span>).<span class="pl-en">html</span>(<span class="pl-s"><span class="pl-pds">"</span>Promise resolved!<span class="pl-pds">"</span></span>);
+        }
+    );</pre></div>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/bommox/jquery-animate.css">Jquery-animate.css</a> is maintained by <a href="https://github.com/bommox">bommox</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
