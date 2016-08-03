@@ -76,7 +76,7 @@
             }
 
             $this.removeClass(toRemove)
-                .addClass(effect + ' animated')
+                .addClass(effect + ' ' + options.animationClass)
                 .off(aevents)
                 .one(aevents, animationEndHandler);
             // This event ensures callback is being called

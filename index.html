@@ -5,15 +5,61 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="dist/libs/animate.css" />
     <style>
+        body {
+            background-color: #ddd;
+
+        }
         .target {
-            width : 60px;
-            height: 60px;
-            background-color: red;
-            margin: 5px;
+            width : 70px;
+            height: 70px;
+            background-color: #ff8181;
+            border-radius: 50%;
+            margin: 5px;   
+            padding: 10px;
             display: inline-block;
         }
         .green {
             background-color: green;
+        }
+        [class*='s-case'] > div:nth-child(2) {
+            padding: 20px 20px;
+            text-align: center;
+        }
+
+        [class*='s-case'] {
+            margin: 15px;
+            padding: 10px 10px 20px 10px;
+            background-color: white;
+            position: relative;
+        }
+        [class*='s-case']:before {
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            clear: both;
+            background-color: #a9c3a9;
+        }
+        [class*='s-case']:hover:before {
+            background-color: #579457;
+            height: 8px;
+        }
+        h2 {            
+            font-family: monospace;
+            font-size: 2rem;
+            margin-top: 0;
+            line-height: 3rem;
+        }
+        pre {
+            color: #cedeb9;
+            background-color: #272525;
+        }
+
+        .myAnim1 {
+            transition: width 5s;
+            width: 200px;
         }
     </style>
 </head>
@@ -26,26 +72,58 @@
         </div>
 
         <div class="row s-case-1">
+            <div class="col-xs-12">
+                <div class="row">
+                    <div class="col-xs-8">
+                        <h2>Getting started</h2>
+                    </div>
+                    <div class="col-xs-4 text-right">
+                        <button class="btn btn-default s-btn pull-right">Animate!</button>
+                    </div>
+                </div>
+            </div>
             <div class="col-xs-12 col-sm-6">
                 <div class="target s-target"></div>
             </div>
             <div class="col-xs-12 col-sm-6">
                 <pre>$(".target").animateCss('bounce');</pre>                
-                <button class="btn btn-default s-btn">Animate!</button>
+                
             </div>
         </div>
 
         <div class="row s-case-11">
+            <div class="col-xs-12">
+                <div class="row">
+                    <div class="col-xs-8">
+                        <h2>Duration option</h2>
+                    </div>
+                    <div class="col-xs-4 text-right">
+                        <button class="btn btn-default s-btn pull-right">Animate!</button>
+                    </div>
+                </div>
+            </div>
+            
             <div class="col-xs-12 col-sm-6">
                 <div class="target s-target"></div>
             </div>
             <div class="col-xs-12 col-sm-6">
                 <pre>$(".s-target").animateCss('bounce', { duration : 2000});</pre>                
-                <button class="btn btn-default s-btn">Animate!</button>
+                
             </div>
         </div>
         
         <div class="row s-case-2">
+            <div class="col-xs-12">
+                <div class="row">
+                    <div class="col-xs-8">
+                        <h2>Callback</h2>
+                    </div>
+                    <div class="col-xs-4 text-right">
+                        <button class="btn btn-default s-btn pull-right">Animate!</button>
+                    </div>
+                </div>
+            </div>
+            
             <div class="col-xs-12 col-sm-6">
                 <div class="target s-target"></div>
             </div>
@@ -53,13 +131,24 @@
                 <pre>$(".s-target").animateCss('bounce', function() {
 	$(this).toggleClass("green");   
 });</pre>                
-                <button class="btn btn-default s-btn">Animate!</button>
+                
             </div>
         </div>
 
         
         
         <div class="row s-case-3">
+            <div class="col-xs-12">
+                <div class="row">
+                    <div class="col-xs-8">
+                        <h2>Callback execution even on fail</h2>
+                    </div>
+                    <div class="col-xs-4 text-right">
+                        <button class="btn btn-default s-btn pull-right">Animate!</button>
+                    </div>
+                </div>
+            </div>
+            
             <div class="col-xs-12 col-sm-6">
                 <div class="target s-target"></div>
             </div>
@@ -67,11 +156,22 @@
                 <pre>$(".s-target").html("").animateCss('effect-no-exists', function() {
 	$(this).html("callback safe!");   
 });</pre>                
-                <button class="btn btn-default s-btn">Animate!</button>
+                
             </div>
         </div>
 
         <div class="row s-case-4">
+            <div class="col-xs-12">
+                <div class="row">
+                    <div class="col-xs-8">
+                        <h2>jQuery promise object available</h2>
+                    </div>
+                    <div class="col-xs-4 text-right">
+                        <button class="btn btn-default s-btn pull-right">Animate!</button>
+                    </div>
+                </div>
+            </div>
+            
             <div class="col-xs-12 col-sm-6">
                 <div class="target s-target"></div>
             </div>
@@ -80,11 +180,22 @@
 	.then(function() {
 	    $(this).html("Promise resolved!");
 	});</pre>                
-                <button class="btn btn-default s-btn">Animate!</button>
+                
             </div>
         </div>
 
         <div class="row s-case-5">
+            <div class="col-xs-12">
+                <div class="row">
+                    <div class="col-xs-8">
+                        <h2>Just another example</h2>
+                    </div>
+                    <div class="col-xs-4 text-right">
+                        <button class="btn btn-default s-btn pull-right">Animate!</button>
+                    </div>
+                </div>
+            </div>
+            
             <div class="col-xs-12 col-sm-6">
                 <div class="target s-target"></div>
                 <div class="target s-target"></div>
@@ -101,9 +212,32 @@
         $(this).toggleClass("green");;
     });
 });</pre>
-                <button class="btn btn-default s-btn">Animate!</button>
+                
             </div>
         </div>
+
+        <div class="row s-case-6">
+            <div class="col-xs-12">
+                <div class="row">
+                    <div class="col-xs-8">
+                        <h2>Custom animation with transition</h2>
+                    </div>
+                    <div class="col-xs-4 text-right">
+                        <button class="btn btn-default s-btn pull-right">Animate!</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-xs-12 col-sm-6">
+                <div class="target s-target"></div>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                <pre></pre>
+                
+            </div>
+        </div>
+
+
     </div>
 
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
@@ -151,7 +285,7 @@
             });
             
             $(".s-case-6 .s-btn").click(function() {        
-                $(".s-case-5 .s-target").animateCss('pulse', {delay: 1000}).promise().then(function() {
+                $(".s-case-6 .s-target").animateCss('myAnim1', {animationClass : "", duration: 5000}).promise().then(function() {
                     $(this).html("Promise resolved!");
                 });
             });
