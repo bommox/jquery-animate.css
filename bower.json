@@ -2,7 +2,10 @@
   "name": "jquery-animate.css",
   "homepage": "https://github.com/bommox/jquery-animate.css",
   "description": "Animate.css jQuery plugin implementation",
-  "main": "dist/jquery-animate.css.js",
+  "main": [
+    "dist/jquery-animate.css.min.js",
+    "dist/libs/libs/animate.min.css"
+  ],
   "keywords": [
     "animate.css",
     "jquery",
@@ -17,9 +20,14 @@
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    "tests",
+    "src",
+    ".gitignore",
+    "Gruntfile.js",
+    "index.html",
+    "package.json"
   ],
-  "dependencies": {
+  "devDependencies": {
     "animate.css": "daneden/animate.css#^3.5.2"
   }
 }
