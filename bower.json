@@ -3,8 +3,8 @@
   "homepage": "https://github.com/bommox/jquery-animate.css",
   "description": "Animate.css jQuery plugin implementation",
   "main": [
-    "dist/jquery-animate.css.min.js",
-    "dist/libs/libs/animate.min.css"
+    "dist/jquery-animate.css.js",
+    "dist/libs/libs/animate.css"
   ],
   "keywords": [
     "animate.css",
